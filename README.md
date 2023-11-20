@@ -1,2 +1,2 @@
 # McPUFF
-Parameter perturbation program
+$\underline{M}$

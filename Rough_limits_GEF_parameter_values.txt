@@ -123,7 +123,3 @@ Spin_odd:	-40<p<25		+0 OK		Spin_odd = 0.4
 Esort_extend:	-9e6+<p<9e6+		+0 OK 		Esort_extend = 1.5
 Esort_slope:	-9e6+<p<9e6+		+0 OK		Esort_slope = 0.04
 Esort_slope_S0:	-9e6+<p<9e6+		+0 OK		Esort_slope_S0 = 0.2
-
-
-
-

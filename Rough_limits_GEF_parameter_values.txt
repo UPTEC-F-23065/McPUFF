@@ -1,0 +1,129 @@
+Errorcodes:	"Segmentation fault"				  _P_DZ_MEAN_S1
+		"<E> Syntax error" Incorrect Parametername in ReadParameters.mac
+		"<S> Calculation stopped due to numerical problem" _P_A_Width_S2
+		"IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed" _P_DZ_MEAN_S1
+		"<E> Event with excessive excitation energy found." _betaL0
+		"<S> Calculation stopped due to numerical problem." _betaL0
+		"<E> Event with excessive excitation energy found." _betaL1 changes at
+		"<S> Calculation stopped due to numerical problem." _betaL1 some value
+		"<E> Event with excessive excitation energy found." _betaH0
+		"<S> Calculation stopped due to numerical problem." _betaH0
+		"<E> Event with excessive excitation energy found." _betaH1
+		"<S> Calculation stopped due to numerical problem." _betaH1
+		"<E> Event with excessive excitation energy found." _dbeta_S3
+		"<S> Calculation stopped due to numerical problem." _dbeta_S3
+		"<S> Calculation stopped due to numerical problem." TCOLLFRAC
+		"<E> Event with excessive excitation energy found." _ECOLLFRAC
+		"<S> Calculation stopped due to numerical problem." TCOLLMIN
+		"malloc(): memory corruption (fast)"		    TCOLLMIN
+		"<S> Calculation stopped due to numerical problem." ESHIFTSASCI_coll
+		"<S> Calculation stopped due to numerical problem." _EDISSFRAC
+		"<S> Calculation stopped due to numerical problem." Epot_shift
+		"<E> Event with excessive excitation energy found." SIGENECK
+		"<E> Event with excessive excitation energy found." EexcSIGrel
+		"Beta_Equi not converged:     10            1001"   DNECK
+		"malloc(): memory corruption (fast)"		    _POLARadd
+		"<E> Event with excessive excitation energy found." T_orbital
+
+Parameters stability interval. Test Conditions: Max 20s calculation time and generate error message.
+#=============== ONLY USED FOR ROUGH ESTIMATES. VALUES MAY NOT BE RELIABLE ===========#  			 
+----------------------------------------------------------------------------------
+Parameter        Stability 	 (+/-0=stable/not     	Default parameter	(9e6+ indicates stable
+   name	   	 interval	 stable for zero)	     value		 for higher values.)
+----------------------------------------------------------------------------------
+_P_DZ_MEAN_S1: 	-8<p<9e4		+0 OK		_P_DZ_Mean_S1 = -0.1710014
+_P_corr_S1: 	-9e6<p<9e6		+0 OK		_P_corr_S1 = 0.07004809
+_P_DZ_Mean_S2:	-15<p<9e4		+0 OK		_P_DZ_Mean_S2 = -0.5337825
+_P_DZ_Mean_S3:	-17<p<9e4		+0 OK		_P_DZ_Mean_S3 = 0.3737403
+_P_DZ_Mean_S4:	-9e3+<p<9e4+		+0 OK		_P_DZ_Mean_S4 = 0.0298693
+ZC_Mode_4L:	-9e4+<p<9e6+		+0 OK		ZC_Mode_4L = 44.4
+_P_Z_Curv_S1:	-9e6+<p<9e6+		+0 OK		_P_Z_Curv_S1 = 0.3814453
+P_Z_Curvmod_S1:	-9e6+<p<9e6+		+0 OK		P_Z_Curvmod_S1 = 1.75
+_P_Z_Curv_S2:	 0<p<9e6+		+0 OK 		_P_Z_Curv_S2 = 0.09044272
+_S2leftmod:	-9e6+<p<900		+0 OK		_S2leftmod = 0.8047901
+P_Z_Curvmod_S2:	-9e6+<p<9e6+		+0 OK		P_Z_Curvmod_S2 = 10
+_P_A_Width_S2:	-35<p<9e6+		+0 OK		_P_A_Width_S2 = 11.63902
+_P_Z_Curv_S3: 	 0<p<9e6+		+0 OK 		_P_Z_Curv_S3 = 0.08252484
+P_Z_Curvmod_S3:	-9e6+<p<9e6+		+0 OK		P_Z_Curvmod_S3 = 10
+P_Z_Curv_SL4:	-9e6+<p<9e6+		+0 OK		P_Z_Curv_SL4 = 0.07
+P_Z_Sigma_SL4:	-9e6+<p<9e6+		+0 OK		P_Z_Sigma_SL4 = 1.15
+_P_Z_Curv_S4:	-9e6+<p<9e6+		+0 OK		_P_Z_Curv_S4 = 0.05258834
+P_Z_Curvmod_S4:	-9e6+<p<9e6+		+0 OK		P_Z_Curvmod_S4 = 10
+_P_Shell_S1:	-9e6+<p<9e6+		+0 OK		_P_Shell_S1 = -3.243825
+_P_Shell_S2:	-9e6+<p<9e6+		+0 OK		_P_Shell_S2 = -4.517141
+_P_Shell_S3:	-9e6+<p<9e6+		+0 OK		_P_Shell_S3 = -7.128624
+P_Shell_SL4:	-9e6+<p<9e6+		+0 OK		P_Shell_SL4 = -0.4
+_P_Shell_S4:	-9e6+<p<9e6+		+0 OK		_P_Shell_S4 = -1.145348
+P_S4_mod:	-9e6+<p<9e6+		+0 OK		P_S4_mod = -0.035
+_PZ_S3_olap_pos:-9e6+<p<9e6+		+0 OK		_PZ_S3_olap_pos = 39.64489
+_PZ_S3_olap_curv:-9e6+<p<9e6+		+0 OK		_PZ_S3_olap_curv = 0.003991976
+ETHRESHSUPPS1:	-9e6+<p<9e6+		+0 OK		ETHRESHSUPPS1 = 10.85
+ESIGSUPPS1:	-9e6+<p<9e6+		+0 OK		ESIGSUPPS1 = 1.0
+Level_S11:	-9e6+<p<9e6+		+0 OK		Level_S11 = 3.0
+Shell_fading:	-9e6+<p<9e6+		-0 OK (notConv)	Shell_fading = 50
+_T_low_S1:	-9e6+<p<9e6+		+0 OK		_T_low_S1 = 0.3158501
+_T_low_S2:	-9e6+<p<9e6+		+0 OK		_T_low_S2 = 0.294624
+_T_low_S3:	-9e6+<p<9e6+		+0 OK		_T_low_S3 = 0.3174517
+_T_low_S4:	-9e6+<p<9e6+		+0 OK		_T_low_S4 = 0.3121705
+_T_low_SL:	-9e6+<p<9e6+		+0 OK		_T_low_SL = 0.2886375
+T_low_S11:	-9e6+<p<9e6+		+0 OK		T_low_S11 = 0.36
+_P_att_pol:	-9e6+<p<9e6+		+0 OK		_P_att_pol = 2.578573
+P_att_pol2:	-9e6+<p<9e6+		+0 OK		P_att_pol2  = 0
+P_att_pol3:	-9e6+<p<9e6+		+0 OK		P_att_pol3 = 0
+_P_att_rel:	-9e6+<p<9e6+		+0 OK		_P_att_rel = 1
+_dE_Defo_S1:	-9e6+<p<9e6+		+0 OK		_dE_Defo_S1 = -4.254451
+_dE_Defo_S2:	-9e6+<p<9e6+		+0 OK		_dE_Defo_S2 = -0.7485108
+_dE_Defo_S3:	-9e6+<p<9e6		+0 OK		_dE_Defo_S3 = 0.601014
+_dE_Defo_S4:	-9e6+<p<9e6+		+0 OK		_dE_Defo_S4 = -0.6219091
+_betaL0:	-90<p<9e6+		+0 OK		_betaL0 = 27.88452
+_betaL1:	-9e6+<p<12		+0 OK		_betaL1 = 0.7099661
+_betaH0:	-130<p<9e6+		+0 OK		_betaH0 = 45.67577
+_betaH1:	-9e6+<p<15		+0 OK		_betaH1 = 0.5417268
+_dbeta_S3:	-9e6+<p<10		+0 OK		_dbeta_S3 = 0.3975313
+kappa:		-9e6+<p<9e6+		+0 OK		kappa = 0
+TCOLLFRAC:	-9e6+<p<0.6	 	+0 OK 		TCOLLFRAC = 0.04
+_ECOLLFRAC:	-9e6+<p<4		+0 OK 		_ECOLLFRAC = 0.02141861
+TFCOLL:		-9e6+<p<9e6+		+0 OK		TFCOLL = 0.034
+TCOLLMIN:	-3<p<3			+0 OK		TCOLLMIN = 0.12
+ESHIFTSASCI_intr:-9e6+<p<1e3		+0 OK		ESHIFTSASCI_intr = -67
+ESHIFTSASCI_coll:-9e6+<p<650		+0 OK		ESHIFTSASCI_coll = -90
+_EDISSFRAC:	 -9e6+<p<3		+0 OK 		_EDISSFRAC = 0.3791646
+Epot_shift:	 -9e6+<p<21		+0 OK		Epot_shift = 0
+SIGDEFO:	 -21<p<21		+0 OK		SIGDEFO = 0.165
+SIGDEFO_0:	 -600+<p<700		+0 OK		SIGDEFO_0 = 0.165
+SIGDEFO_slope:	 -9e6+<p<9e6+		+0 OK		SIGDEFO_slope = 0
+SIGENECK:	 -50<p<50		+0 OK		SIGENECK = 5.0
+EexcSIGrel:	 -5<p<5			+0 OK 		EexcSIGrel = 0.7
+DNECK:		 -2<p<29		+0 OK 		DNECK = 1
+FTRUNC50:	 -9e6+<p<9e6+		+0 OK		FTRUNC50 = 1
+ZTRUNC50:	 -9e6+<p<9e6+		+0 OK		ZTRUNC50 = 50
+FTRUNC28:	 -9e6+<p<9e6+		+0 OK 		FTRUNC28 = 0.56
+ZTRUNC28:	 -9e6+<p<9e6+		+0 OK 		ZTRUNC28 = 30.5
+ZMAX_S2:	 -9e6+<p<9e6+		+0 OK 		ZMAX_S2 = 60
+NTRANSFEREO:	 -9e6+<p<9e6+		+0 OK 		NTRANSFEREO = 6
+NTRANSFERE:	 -9e6+<p<9e6+		+0 OK 		NTRANSFERE = 12
+Csort:		 -9e6+<p<9e6+		+0 OK 		Csort = 0.5
+PZ_EO_symm:	 -9e6+<p<9e6+		+0 OK 		PZ_EO_symm = 2.6
+PN_EO_Symm:	 -9e6+<p<9e6+		+0 OK 		PN_EO_Symm = 2.6
+R_EO_THRESH:	 -9e6+<p<9e6+		+0 OK 		R_EO_THRESH = 0.398
+R_EO_SIGMA:	 -9e6+<p<9e6+		+0 OK 		R_EO_SIGMA = 2.0
+R_EO_Max:	 -9e6+<p<9e6+		+0 OK 		R_EO_Max = 0.6  
+_POLARadd:	 -9<p<4			+0 OK 		_POLARadd = 0.3741641
+POLARfac:	 -9e6+<p<9e6+		+0 OK		POLARfac = 1
+T_POL_RED:	 -9e6+<p<9e6+		+0 OK 		T_POL_RED = 0.01
+_HOMPOL:	 -14<p<15		-0 OK 		_HOMPOL = 2.38018 
+ZPOL1:		 -4<p<4			+0 OK 		ZPOL1 = 0
+P_n_x:		 -9e6+<p<9e6+		+0 OK 		P_n_x = 0
+Tscale:		 0.1<p<10		-0 OK (notConv)	Tscale = 1 
+Econd:		-110<p<9e6+		+0 OK		Econd = 2.0
+Etrans:		-9e6+<p<9e6+		+0 OK		Etrans = 7.0
+T_orbital:	-9e6+<p<18		+0 OK		T_orbital = 0
+_Jscaling:	-4<p<4			+0 OK 		_Jscaling = 1.0
+Spin_odd:	-40<p<25		+0 OK		Spin_odd = 0.4
+Esort_extend:	-9e6+<p<9e6+		+0 OK 		Esort_extend = 1.5
+Esort_slope:	-9e6+<p<9e6+		+0 OK		Esort_slope = 0.04
+Esort_slope_S0:	-9e6+<p<9e6+		+0 OK		Esort_slope_S0 = 0.2
+
+
+
+

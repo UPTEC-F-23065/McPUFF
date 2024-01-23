@@ -1,0 +1,229 @@
+            Do While Instr(Cline,"/"+"'") > 0   ' Remove limited comments
+              Cline = Trim(Cline)
+              Ileft = Instr(Cline,"/"+"'") 
+              Iright = Instr(Cline,"'"+"/")
+              If Ileft < Iright Then 
+                Cline = Mid(Cline,1,Ileft-1) + Mid(Cline,Iright+2)
+              End If      
+            Loop
+            Cline = Trim(Cline)
+            If Instr(Cline,"'") > 0 Then    ' Remove text after comment sign
+              Cline = Mid(Cline,1,Instr(Cline,"'")-1)
+              Cline = Trim(Cline)
+            End If 
+            If Cline <> "" Then
+            If Instr(Cline,"=") > 0 Then
+Print Cline            
+              Ndiv = CC_Count(Cline, "=") 
+              If Ndiv = 2 Then
+                CC_Cut(Cline, "=", Cdiv(), N) 
+                Cpar = Ucase(Trim(Cdiv(1)))
+                Valpar = Val(Trim(Cdiv(2)))
+'Print Cpar,Valpar                
+                Select Case Cpar
+		  Case "_DELTA_S0" 		': print _Delta_S0 - Valpar
+                   _Delta_S0 = Valpar
+                  Case "CHISQR_FIT_PRESENT"
+                    Chisqr_Fit_min = Valpar
+                  Case "_P_DZ_MEAN_S1" 		': print _P_DZ_Mean_S1 - Valpar
+                    _P_DZ_Mean_S1 = Valpar
+                  Case "_P_CORR_S1" 		': print _P_corr_S1 - Valpar
+                    _P_corr_S1 = Valpar
+                  Case "_P_DZ_MEAN_S2" 		': print _P_DZ_Mean_S2 - Valpar
+                    _P_DZ_Mean_S2 = Valpar
+                  Case "_P_DZ_MEAN_S3" 		': print _P_DZ_Mean_S3 - Valpar
+                    _P_DZ_Mean_S3 = Valpar
+                  Case "_P_DZ_MEAN_S4" 		': print _P_DZ_Mean_S4 - Valpar
+                    _P_DZ_Mean_S4 = Valpar
+		  Case "ZC_MODE_4L"    		': print ZC_Mode_4L - Valpar
+		    ZC_Mode_4L = Valpar
+                  Case "_P_Z_CURV_S1" 		': print _P_Z_Curv_S1 - Valpar
+                    _P_Z_Curv_S1 = Valpar
+                  Case "P_Z_CURVMOD_S1" 	': print P_Z_Curvmod_S1 - Valpar
+                    P_Z_Curvmod_S1 = Valpar
+                  Case "_P_Z_CURV_S2" 		': print _P_Z_Curv_S2 - Valpar
+                    _P_Z_Curv_S2 = Valpar
+		  Case "_S2LEFTMOD"   		': print _S2leftmod - Valpar
+		    _S2leftmod = Valpar
+                  Case "P_Z_CURVMOD_S2" 	': print P_Z_Curvmod_S2 - Valpar
+                    P_Z_Curvmod_S2 = Valpar
+		  Case "_P_A_WIDTH_S2"  	': print _P_A_Width_S2 - Valpar
+		    _P_A_Width_S2 = Valpar
+                  Case "_P_Z_CURV_S3" 		': print _P_Z_Curv_S3 - Valpar
+                    _P_Z_Curv_S3 = Valpar
+                  Case "P_Z_CURVMOD_S3" 	': print P_Z_Curvmod_S3 - Valpar
+                    P_Z_Curvmod_S3 = Valpar
+		  Case "P_Z_CURV_SL4"  		': print P_Z_Curv_SL4 - Valpar
+		    P_Z_Curv_SL4 = Valpar
+		  Case "P_Z_SIGMA_SL4"  	': print P_Z_Sigma_SL4 - Valpar
+		    P_Z_Sigma_SL4 = Valpar
+                  Case "_P_Z_CURV_S4" 		': print _P_Z_Curv_S4 - Valpar
+                    _P_Z_Curv_S4 = Valpar
+                  Case "P_Z_CURVMOD_S4" 	': print P_Z_Curvmod_S4 - Valpar
+                    P_Z_Curvmod_S4 = Valpar
+		  Case "_P_SHELL_S1" 		': print _P_Shell_S1 - Valpar
+                    _P_Shell_S1 = Valpar
+                  Case "_P_SHELL_S2" 		': print _P_Shell_S2 - Valpar
+                    _P_Shell_S2 = Valpar
+                  Case "_P_SHELL_S3" 		': print _P_Shell_S3 - Valpar
+                    _P_Shell_S3 = Valpar
+		  Case "P_SHELL_SL4"  		': print P_Shell_SL4 - Valpar
+		    P_Shell_SL4 = Valpar
+                  Case "_P_SHELL_S4" 		': print _P_Shell_S4 - Valpar
+                    _P_Shell_S4 = Valpar
+		  Case "P_S4_MOD"		': print P_S4_mod - Valpar
+		    P_S4_mod = Valpar
+                  Case "_PZ_S3_OLAP_POS" 	': print _PZ_S3_olap_pos - Valpar
+                    _PZ_S3_olap_pos = Valpar
+                  Case "_PZ_S3_OLAP_CURV" 	': print _PZ_S3_olap_curv - Valpar
+                    _PZ_S3_olap_curv = Valpar
+                  Case "ETHRESHSUPPS1"		': print ETHRESHSUPPS1 - Valpar
+		    ETHRESHSUPPS1 = Valpar
+		  Case "ESIGSUPPS1"		': print ESIGSUPPS1 - Valpar
+		    ESIGSUPPS1 = Valpar
+		  Case "LEVEL_S11"		': print Level_S11 - Valpar
+		    Level_S11 = Valpar
+		  Case "SHELL_FADING"		': print Shell_fading - Valpar
+		    Shell_fading = Valpar
+		  Case "_T_LOW_S1" 		': print _T_low_S1 - Valpar
+                    _T_low_S1 = Valpar
+                  Case "_T_LOW_S2" 		': print _T_low_S2 - Valpar
+                    _T_low_S2 = Valpar
+                  Case "_T_LOW_S3" 		': print _T_low_S3 - Valpar
+                    _T_low_S3 = Valpar
+                  Case "_T_LOW_S4" 		': print _T_low_S4 - Valpar
+                    _T_low_S4 = Valpar
+                  Case "_T_LOW_SL" 		': print _T_low_SL - Valpar
+                    _T_low_SL = Valpar 
+                  Case "T_LOW_S11"   		': print T_low_S11 - Valpar
+                    T_low_S11 = Valpar
+		  Case "_P_ATT_POL" 		': print _P_att_pol - Valpar
+                    _P_att_pol = Valpar
+		  Case "P_ATT_POL2"		': print P_att_pol2 - Valpar
+		    P_att_pol2 = Valpar
+		  Case "P_ATT_POL3"		': print P_att_pol3 - Valpar
+		    P_att_pol3 = Valpar
+  		  Case "_P_ATT_REL"  		': print _P_att_rel - Valpar
+                    _P_att_rel = Valpar  
+                  Case "_DE_DEFO_S1" 		': print _dE_Defo_S1 - Valpar
+                    _dE_Defo_S1 = Valpar
+                  Case "_DE_DEFO_S2" 		': print _dE_Defo_S2 - Valpar
+                    _dE_Defo_S2 = Valpar
+                  Case "_DE_DEFO_S3" 		': print _dE_Defo_S3 - Valpar
+                    _dE_Defo_S3 = Valpar
+                  Case "_DE_DEFO_S4" 		': print _dE_Defo_S4 - Valpar
+                    _dE_Defo_S4 = Valpar
+                  Case "_BETAL0" 		': print _betaL0 - Valpar
+                    _betaL0 = Valpar
+                  Case "_BETAL1" 		': print _betaL1 - Valpar
+                    _betaL1 = Valpar
+                  Case "_BETAH0" 		': print _betaH0 - Valpar
+                    _betaH0 = Valpar
+                  Case "_BETAH1" 		': print _betaH1 - Valpar
+                    _betaH1 = Valpar
+                  Case "_DBETA_S3" 		': print _dbeta_S3 - Valpar
+                    _dbeta_S3 = Valpar
+		  Case "KAPPA"			': print kappa - Valpar
+		    kappa = Valpar
+		  Case "TCOLLFRAC" 		': print TCOLLFRAC - Valpar
+                    TCOLLFRAC = Valpar
+                  Case "_ECOLLFRAC" 		': print _ECOLLFRAC - Valpar
+                    _ECOLLFRAC = Valpar
+                  Case "TFCOLL" 		': print TFCOLL - Valpar
+                    TFCOLL = Valpar
+		  Case "TCOLLMIN"		': print TCOLLMIN - Valpar
+		    TCOLLMIN = Valpar
+		  Case "ESHIFTSASCI_INTR" 	': print ESHIFTSASCI_intr - Valpar
+                    ESHIFTSASCI_intr = Valpar
+                  Case "ESHIFTSASCI_COLL" 	': print ESHIFTSASCI_coll - Valpar
+                    ESHIFTSASCI_coll = Valpar
+                  Case "_EDISSFRAC" 		': print _EDISSFRAC - Valpar
+                    _EDISSFRAC = Valpar
+                  Case "EPOT_SHIFT"		': print Epot_shift - Valpar
+		    Epot_shift = Valpar
+		  Case "SIGDEFO" 		': print SIGDEFO - Valpar
+                    SIGDEFO = Valpar
+		  Case "SIGDEFO_0"		': print SIGDEFO_0 - Valpar
+		    SIGDEFO_0 = Valpar
+                  Case "SIGDEFO_SLOPE" 		': print SIGDEFO_slope - Valpar
+                    SIGDEFO_slope = Valpar
+		  Case "SIGENECK"		': print SIGENECK - Valpar
+		    SIGENECK = Valpar
+		  Case "EEXCSIGREL"  		': print EexcSIGrel - Valpar
+                    EexcSIGrel = Valpar     
+		  Case "DNECK"   		': print DNECK - Valpar
+                    DNECK = Valpar
+		  Case "FTRUNC50" 		': print FTRUNC50 - Valpar
+		    FTRUNC50 = Valpar
+		  Case "ZTRUNC50" 		': print ZTRUNC50 - Valpar
+		    ZTRUNC50 = Valpar 		
+		  Case "FTRUNC28" 		': print FTRUNC28 - Valpar
+		    FTRUNC28 = Valpar
+		  Case "ZTRUNC28" 		': print ZTRUNC28 - Valpar
+		    ZTRUNC28 = Valpar
+		  Case "ZMAX_S2"		': print ZMAX_S2 - Valpar
+		    ZMAX_S2 = Valpar
+		  Case "NTRANSFEREO"		': print NTRANSFEREO - Valpar
+		    NTRANSFEREO = Valpar
+		  Case "NTRANSFERE"		': print NTRANSFERE - Valpar
+		    NTRANSFERE = Valpar
+		  Case "CSORT"			': print Csort - Valpar
+		    Csort = Valpar
+		  Case "PZ_EO_SYMM"  		': print PZ_EO_Symm - Valpar    
+             /' Even-odd effect in Z at symmetry '/
+                      PZ_EO_symm = Valpar
+                  Case "PN_EO_SYMM"  		': print PN_EO_Symm - Valpar  
+             /' Even-odd effect in N at symmetry '/
+                      PN_EO_Symm = Valpar
+                  Case "R_EO_THRESH"  		': print R_EO_THRESH - Valpar 
+/' Threshold for asymmetry-driven even-odd effect'/
+                      R_EO_THRESH = Valpar
+                  Case "R_EO_SIGMA" 		': print R_EO_SIGMA - Valpar
+                      R_EO_SIGMA = Valpar
+                  Case "R_EO_MAX"     		': print R_EO_Max - Valpar
+                      R_EO_Max = Valpar   
+		  Case "_POLARADD" 		': print _POLARadd - Valpar
+                    _POLARadd = Valpar
+		  Case "POLARFAC"		': print _POLARfac - Valpar
+		    POLARfac = Valpar
+		  Case "T_POL_RED"		': print T_POL_RED - Valpar
+		    T_POL_RED = Valpar
+		  Case "_HOMPOL" 		': print _HOMPOL - Valpar
+                    _HOMPOL = Valpar
+		  Case "ZPOL1"			': print ZPOL1 - Valpar
+		    ZPOL1 = Valpar
+		  Case "P_N_X"			': print P_n_x - Valpar
+		    P_n_x = Valpar
+		  Case "TSCALE"			': print Tscale - Valpar
+		    Tscale = Valpar
+		  Case "ECOND"			': print Econd - Valpar
+		    Econd = Valpar
+		  Case "ETRANS"			': print Etrans - Valpar
+		    Etrans = Valpar
+		  Case "T_ORBITAL"		': print T_orbital - Valpar
+		    T_orbital = Valpar
+		  Case "_JSCALING" 		': print _Jscaling - Valpar
+                      _Jscaling = Valpar    
+		  Case "SPIN_ODD" 		': print Spin_odd - Valpar
+                      Spin_odd = Valpar
+		  Case "ESORT_EXTEND"		': print Esort_extend - Valpar
+		    Esort_extend = Valpar
+		  Case "ESORT_SLOPE"		': print Esort_slope - Valpar
+		    Esort_slope = Valpar
+		  Case "ESORT_SLOPE_S0"		': print Esort_slope_S0 - Valpar
+		    Esort_slope_S0 = Valpar	
+                  Case "EOSCALE" 		': print EOscale - Valpar
+                      EOscale = Valpar
+                  Case "D_PAR_FAC" 		': print _P_DZ_Mean_S1 - Valpar
+                      D_Par_Fac = Valpar    
+                     
+                  Case Else
+                    Print "<E> Readparameters.mac: Parameter "+Cpar+" not defined."
+                End Select
+              Else
+                Print "<E> Syntax error in " + Cline + " ."  
+              End If
+            Else
+              Print "<E> Syntax error in "+Cline+" ."
+            End If
+            End If

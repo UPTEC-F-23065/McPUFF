@@ -37,13 +37,13 @@ GEF [[1]](#1) and TALYS [[2]](#2) are two computer software programs used to sim
 
 McPUFF works as a stand-alone script. There is a specific folder structure required for the program to work. When placing the McPUFF files and folders on the local system, they should be organized as described below:
 
-McPUFF                                    # Can be named anything.
+McPUFF                                    # Can be named anything.  
 
-├── McPUFF_source_files
+├── McPUFF_source_files  
 
-│   ├── McPUFF.py                         # Main script. Lets user set data for which fission reaction to simulate. 
+│   ├── McPUFF.py                         # Main script. Lets user set data for which fission reaction to simulate.  
 
-│   └── package_McPUFF
+│   └── package_McPUFF  
 
 │       ├── GEF_input.py                  # Lets user choose GEF input data.
 │       ├── Gaussian_GEF_Param.py         # Lets user set standard deviation for Gaussian distribution used for perturbed parameter values.

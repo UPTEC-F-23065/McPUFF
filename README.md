@@ -4,7 +4,7 @@ $\underline{M}onte$ $\underline{C}arlo$ $\underline{P}ropagation$ $of$ $\underli
 ## Description
 
 
-GEF [[1]](#1) and TALYS [[2]](#2) are two computer software programs used to simulate nuclear fission. There is an option called ' fymodel 4 (Okumura) ' in TALYS which makes use of GEF as a fission fragment generator and then simulates the evaporation process using a Hauser-Feshbach method. McPUFF was written to enable the user to perform simulations using the ' fymodel 4 ' option in TALYS but with perturbed parameter values in GEF. The perturbation of the parameter values in GEF, using the built-in function ' MyParameters', introduces uncertainties in the fission observables, which will be passed on to TALYS via the input data. This provides a measure of the sensitivity of the TALYS model to uncertainties in nuclear data. McPUFF performs its simulations using the ' Total Monte Carlo (TMC) ' method, described in reference [[3]](#3), which is a method for handling the propagation of uncertainties in calculations. The implementation of the TMC method requires modifications of the GEF and TALYS softwares, and these modifications are discussed in the ' Overview of the modifications of GEF and TALYS ' section. All results and information about a simulation with McPUFF are stored in a python ' pickle ' file. After a simulation is completed, the pickle file can be loaded and the original object structure of McPUFF can be navigated in order to analyze the results. 
+GEF [[1]](#1) and TALYS [[2]](#2) are two computer software programs used to simulate nuclear fission. There is an option called ' fymodel 4 (Okumura) ' in TALYS which makes use of GEF as a fission fragment generator and then simulates the evaporation process using a Hauser-Feshbach method. McPUFF was written to enable the user to perform simulations using the ' fymodel 4 ' option in TALYS but with perturbed parameter values in GEF. The perturbation of the parameter values in GEF, using the built-in function ' MyParameters', introduces uncertainties in the fission observables, which will be passed on to TALYS via the input data. This provides a measure of the sensitivity of the TALYS model to uncertainties in nuclear data. McPUFF performs its simulations using the ' Total Monte Carlo (TMC) ' method, described in reference [[3]](#3), which is a method for handling the propagation of uncertainties in calculations. The implementation of the TMC method requires modifications of the GEF and TALYS softwares, and these modifications are discussed in the ' Overview of the modifications of GEF and TALYS ' section. The user sets the parameters for the simulated fission reaction and can choose the GEF and TALYS input data, which parameters to perturb, the magnitude of the perturbation and which distribution to draw perturbed parameter values from by making choices in a set of separate input files. All results and information about a simulation with McPUFF are stored in a python ' pickle ' file. After a simulation is completed, the pickle file can be loaded and the original object structure of McPUFF can be navigated in order to analyze the results. 
 
 ## Table of contents
 
@@ -12,6 +12,8 @@ GEF [[1]](#1) and TALYS [[2]](#2) are two computer software programs used to sim
 - Requirements
 - Overview of the GEF and TALYS modifications
 - Installation
+- McPUFF simulation flow chart
+- McPUFF object structure
 - Features
 - License
 - References
@@ -29,6 +31,17 @@ GEF [[1]](#1) and TALYS [[2]](#2) are two computer software programs used to sim
 
 - Only one GEF source file needs to be modified, ' ReadParameters.mac '. The list of parameters needs to be extended to encompass all parameters in the GEF source file ' parameters.bas '. This repository contains a modified copy of the GEF source code file [ReadParameters.mac](https://github.com/UPTEC-F-23065/McPUFF/blob/0aba22b49c58036d0ab31036d52f9ad9972be772/ReadParameters.mac), and a pdf-file showing the necessary [GEF Modifications](https://github.com/UPTEC-F-23065/McPUFF/blob/a0ae153531fa13ed95af9f5d99c407b0fbdb05f6/Modifications_of_GEF_for_TMC_simulations.pdf) if the user wants to implement the modifications on their own.
 - The necessary modifications for TALYS are described in detail in the GitHub repository [Modification-of-TALYS-for-TMC-simulations ](https://github.com/UPTEC-F-23065/Modification-of-TALYS-for-TMC-simulations.git).
+
+## McPUFF simulation flow chart
+
+
+A TMC simulation has two sources of uncertainties, one statistical and one systematical. The systematical uncertainty is a measure of the model response to uncertainties in the input data, which is the desired information. In order to reduce the statistical uncertainty, a large number (potentially thousands) of simulations are performed and hence the McPUFF program performs parallel simulations in loops until the desired number of simulations are performed. The user sets the parameters for the simulation at the outset and the rest of the simulation is automated. 
+
+
+
+## McPUFF object structure
+
+
 
 ## Installation
 

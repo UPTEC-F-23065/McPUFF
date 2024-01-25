@@ -23,8 +23,8 @@ GEF [[1]](#1) and TALYS [[2]](#2) are two computer software programs used to sim
 
 - numPy
 - Matplotlib
-- Modified version of TALYS 1.96. TALYS is available for download at available at [TALYS](https://tendl.web.psi.ch/tendl_2021/talys.html). 
-- Modified version of GEF version 2023/1.1. GEF is available for download at [GEF](https://www.khschmidts-nuclear-web.eu/GEF.html).
+- Modified version of TALYS 1.96. TALYS is available for download at available at [TALYS](https://tendl.web.psi.ch/tendl_2021/talys.html "TALYS software at IAEA"). 
+- Modified version of GEF version 2023/1.1. GEF is available for download at [GEF](https://www.khschmidts-nuclear-web.eu/GEF.html "GEF software homepage").
 
 ## Overview of the necessary modifications of GEF and TALYS 
 

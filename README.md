@@ -37,7 +37,7 @@ GEF [[1]](#1) and TALYS [[2]](#2) are two computer software programs used to sim
 
 A TMC simulation has two sources of uncertainties, one statistical and one systematical. The systematical uncertainty is a measure of the model response to uncertainties in the input data, which is the desired information. In order to reduce the statistical uncertainty, a large number (potentially thousands) of simulations are performed and hence the McPUFF program performs parallel simulations in loops until the desired number of simulations are performed. The user provides the information about the simulated fission reaction at the outset and the rest of the simulation is automated. The figure below shows a schematic of the McPUFF simulations.
 
-<img src=FlowChartMcPUFF.png width="619" height="716" />
+<img src=FlowChartMcPUFF.png width="464" height="537" />
 
 
 ## McPUFF object structure

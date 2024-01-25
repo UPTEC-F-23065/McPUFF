@@ -71,7 +71,7 @@ A TMC simulation has two sources of uncertainties, one statistical and one syste
 ## McPUFF object structure
 
 
-In order to keep the results from potentially thousands of simulations separated and structured, McPUFF stores all information about a fission reaction and results from a simulation in a set of objects. Each simulation with GEF and TALYS is performed in its own thread with a specific perturbed parameter value and the results are stored in a unique object. The purpose for this is to be able to relate a specific perturbed parameter value to a specific GEF and/or TALYS result. The McPUFF program has two simulation modes, a "Single_Parameters" mode and a "TMC" mode. The object structure is different depending on which mode that is used. The object structure for the two program modes are shown in the figure below.
+In order to keep the results from potentially thousands of simulations separated and structured, McPUFF stores all information about a fission reaction and results from a simulation in a set of objects. Each simulation with GEF and TALYS is performed in its own thread with a specific perturbed parameter value and the results are stored in unique objects. The purpose for this is to be able to relate a specific perturbed parameter value to a specific GEF and/or TALYS result. The McPUFF program has two simulation modes, a "Single_Parameters" mode and a "TMC" mode. The object structure is different depending on which mode that is used. The object structure for the two program modes are shown in the figure below.
 
 <img src=ObjectStructureMcPUFF.png width="498" height="503" />
 

@@ -36,11 +36,11 @@ GEF [[1]](#1) and TALYS [[2]](#2) are two computer software programs used to sim
 
 
 McPUFF works as a stand-alone script. There is a specific folder structure required for the program to work. When placing the McPUFF files and folders on the local system, they should be organized as described below:
-
-McPUFF                                    # Can be named anything.\n
-├── McPUFF_source_files\n  
-│   ├── McPUFF.py                         # Main script. Lets user set data for which fission reaction to simulate.\n  
-│   └── package_McPUFF\n  
+<pre>
+McPUFF                                    # Can be named anything.
+├── McPUFF_source_files
+│   ├── McPUFF.py                         # Main script. Lets user set data for which fission reaction to simulate.
+│   └── package_McPUFF
 │       ├── GEF_input.py                  # Lets user choose GEF input data.
 │       ├── Gaussian_GEF_Param.py         # Lets user set standard deviation for Gaussian distribution used for perturbed parameter values.
 │       ├── McPUFF_Perturbed_Data.py      # Loads saved simulation data from pickle file and reconstructs original object structure for data analysis.
@@ -53,6 +53,7 @@ McPUFF                                    # Can be named anything.\n
     ├── TALYS_working_directory           # Holds TALYS files and folders during McPUFF execution. Contents deleted after each loop. Can be saved for analysis.
     └── pickle_results                    # Saves all fission reaction and results in object structure for later analysis. Created at end of McPUFF simulation.
         └── Z92_A236_n_E2.53e-08MeV.pkl   # Example of pickle file.
+</pre>
 
 ## McPUFF simulation flow chart
 

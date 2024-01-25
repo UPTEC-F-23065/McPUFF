@@ -35,7 +35,10 @@ GEF [[1]](#1) and TALYS [[2]](#2) are two computer software programs used to sim
 ## Installation
 
 
-McPUFF works as a stand-alone script in Linux. Modified versions of the GEF and TALYS softwares has to be compiled and be "on path" (for instance using the "export PATH=.." command). There is a specific folder structure required for the program to work. When placing the McPUFF files and folders on the local system, they should be organized as described below:  
+McPUFF works as a stand-alone script in Linux. To run McPUFF there are a few things that needs to be taken care of manually: 
+- Modified versions of the GEF and TALYS softwares have to be compiled and be ' on path ' (for instance using the ' export PATH=.. ' command).
+- Local paths to the ' McPUFF_source_files ' folder and the modified versions of GEF and TALYS have to be entered in the main script.
+- There is a specific folder structure required for the program to work. When placing the McPUFF files and folders on the local system, they should be organized    as described below:  
 
 <pre>
 McPUFF                                    # Can be named anything.

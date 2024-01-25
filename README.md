@@ -32,6 +32,22 @@ GEF [[1]](#1) and TALYS [[2]](#2) are two computer software programs used to sim
 - Only one GEF source file needs to be modified, ' ReadParameters.mac '. The list of parameters needs to be extended to encompass all parameters in the GEF source file ' parameters.bas '. This repository contains a modified copy of the GEF source code file [ReadParameters.mac](https://github.com/UPTEC-F-23065/McPUFF/blob/0aba22b49c58036d0ab31036d52f9ad9972be772/ReadParameters.mac "Modified copy of GEF source code file."), and a pdf-file showing the necessary [GEF Modifications](https://github.com/UPTEC-F-23065/McPUFF/blob/a0ae153531fa13ed95af9f5d99c407b0fbdb05f6/Modifications_of_GEF_for_TMC_simulations.pdf "PDF with necessary modifications highlighted in yellow") if the user wants to implement the modifications on their own.
 - The necessary modifications for TALYS are described in detail in the GitHub repository [Modification-of-TALYS-for-TMC-simulations ](https://github.com/UPTEC-F-23065/Modification-of-TALYS-for-TMC-simulations.git "Repository with modified copies of TALYS source files and information about necessary modifications").
 
+## Installation
+
+
+McPUFF works as a stand-alone script. There is a specific folder structure required for the program to work. When placing the McPUFF files and folders on the local system, they should be organized as described below:
+
+McPUFF
++-- McPUFF_source_files
+      +-- McPUFF.py
+      +-- package_McPUFF
+          +-- __init__.py
+          +-- Gaussian_GEF_Param.py
+          +-- GEF_input.py
+          +-- McPUFF_Perturbed_Data.py
+          +-- McPUFF_program.py
+          +-- Parameters_to_vary.py
+          +-- TALYS_Input.py
 ## McPUFF simulation flow chart
 
 
@@ -45,9 +61,6 @@ A TMC simulation has two sources of uncertainties, one statistical and one syste
 In order to keep the results from potentially thousands of simulations separated and structured, McPUFF stores all information about a fission reaction and results from a simulation in a set of objects. Each simulation with GEF and TALYS is performed in its own thread with a specific perturbed parameter value and the results are stored in a unique object. The purpose for this is to be able to relate a specific perturbed parameter value to a specific GEF and/or TALYS result. The McPUFF program has two simulation modes, a "Single_Parameters" mode and a "TMC" mode. The object structure is different depending on which mode that is used. The object structure for the two program modes are shown in the figure below.
 
 <img src=ObjectStructureMcPUFF.png width="498" height="503" />
-
-## Installation
-
 
 ## Features
 

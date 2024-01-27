@@ -47,6 +47,7 @@ McPUFF works as a stand-alone script in Linux. To run McPUFF there are a few thi
 McPUFF                                    # Can be named anything.
 ├── McPUFF_source_files
 │   ├── McPUFF.py                         # Main script. Lets user set data for which fission reaction to simulate.
+│   ├── McPUFF_data_analysis.py           # Lets user load data from a previous McPUFF simulation. Contains example functions for the McPUFF ' Single_Parameters ' and ' TMC ' modes.
 │   └── package_McPUFF
 │       ├── GEF_input.py                  # Lets user choose GEF input data.
 │       ├── Gaussian_GEF_Param.py         # Lets user set standard deviation for Gaussian distribution used for perturbed parameter values.

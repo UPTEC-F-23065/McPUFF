@@ -4,7 +4,7 @@ $\underline{M}onte$ $\underline{C}arlo$ $\underline{P}ropagation$ $of$ $\underli
 ## Description
 
 
-GEF [[1]](#1) and TALYS [[2]](#2) are two computer software programs used to simulate nuclear fission. There is an option called ' fymodel 4 (Okumura) ' in TALYS which makes use of GEF as a fission fragment generator and then simulates the evaporation process using a Hauser-Feshbach method. McPUFF was written to enable the user to perform simulations using the ' fymodel 4 ' option in TALYS but with perturbed parameter values in GEF. The perturbation of the parameter values in GEF, using the built-in function ' MyParameters', introduces uncertainties in the fission observables, which will be passed on to TALYS via the input data. This provides a measure of the sensitivity of the TALYS model to uncertainties in nuclear data. McPUFF performs its simulations using the ' Total Monte Carlo (TMC) ' method, described in reference [[3]](#3), which is a method for handling the propagation of uncertainties in calculations. The implementation of the TMC method requires modifications of the GEF and TALYS softwares, and these modifications are discussed in the ' Overview of the modifications of GEF and TALYS ' section. When performing a simulation using McPUFF, the user provides the necessary information about the simulated fission reaction and can choose the GEF and TALYS input data, which parameters to perturb, the magnitude of the perturbation and which distribution to draw perturbed parameter values from by making choices in a set of separate input files. All results and information about a simulation with McPUFF are stored in a python ' pickle ' file. After a simulation is completed, the pickle file can be loaded and the original object structure of McPUFF can be navigated in order to analyze the results. 
+GEF [[1]](#1) and TALYS [[2]](#2) are two computer software programs used to simulate nuclear fission. There is an option called ' fymodel 4 (Okumura) ' in TALYS which makes use of GEF as a fission fragment generator and then simulates the evaporation process using a Hauser-Feshbach method. McPUFF was written to enable the user to perform simulations using the ' fymodel 4 ' option in TALYS but with perturbed parameter values in GEF. The perturbation of the parameter values in GEF, using the built-in function ' MyParameters', introduces uncertainties in the fission observables, which will be passed on to TALYS via the input data. This provides a measure of the sensitivity of the TALYS model to uncertainties in nuclear data. McPUFF performs its simulations using the ' Total Monte Carlo (TMC) ' method, described in reference [[3]](#3), which is a method for handling the propagation of uncertainties in calculations. The implementation of the TMC method requires modifications of the GEF and TALYS softwares, and these modifications are discussed in the ' Overview of the modifications of GEF and TALYS ' section. When performing a simulation using McPUFF, the user provides the necessary information about the simulated fission reaction and can choose the GEF and TALYS input data, which parameters to perturb, the magnitude of the perturbation and which distribution to draw perturbed parameter values from by making choices in a set of separate input files. All results and information about a simulation with McPUFF are stored in a Python ' pickle ' file. After a simulation is completed, the pickle file can be loaded and the original object structure of McPUFF can be navigated in order to analyze the results. 
 
 ## Table of contents
 
@@ -15,6 +15,7 @@ GEF [[1]](#1) and TALYS [[2]](#2) are two computer software programs used to sim
 - McPUFF simulation flow chart
 - McPUFF object structure
 - Features
+- Examples
 - License
 - References
 
@@ -81,6 +82,13 @@ In order to keep the results from potentially thousands of simulations separated
 The TMC method requires a large number of simulations to be performed in order to reduce the statistical error and in order to decrease the computation time, McPUFF performs multi-thread calculations in parallel. Results are stored in an object structure and, in order to free up disc space, files and folders used for the calculation are deleted after each calculation is complete.
 
 Saves data for param vals etc
+
+## Examples
+
+
+The Python script ' McPUFF_Perturbed_Data.py ' is used to load the results from a previous McPUFF simulation. To manage the time required to complete the desired number of perturbed simulations, the McPUFF simulations can be split up into batches, say 10 simulations with 1000 perturbed GEF parameter values in each. When analyzing the data, the ' McPUFF_Perturbed_Data.py ' script can then load the pickle files from all batches at once. The script will recreate the original object structure with all the simulation results stored in the objects. The script also contains an example functions, which can be run from the script ' McPUFF_data_analysis.py '. There are two examples included, called ' Correlation_division_Eexc_light_heavy_Single_Parameters() ' and ' Correlation_division_Eexc_light_heavy_TMC() ', which demonstrates how the McPUFF object structure can be navigated to retrieve simulation results from a saved pickle file from a McPUFF ' Single_Parameters ' mode and ' TMC ' mode simulation, respectively.
+
+There are no examples of Python ' pickle ' files included here, as unknown pickle files are not recommended to be used from a safety point of view. (Pickle files can be created using the McPUFF program).
 
 ## License
 

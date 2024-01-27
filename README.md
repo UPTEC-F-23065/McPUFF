@@ -110,5 +110,5 @@ The European physical journal. A, Hadrons and nuclei, 59(6), 2023.
 P. Karlsson. Total Monte Carlo of the fission model in GEF
 and its influence on the nuclear evaporation in TALYS.
 Technical Report UPTEC F 23065, Uppsala university,
-2023, [Link](http://urn.kb.se/resolve?urn=urn:nbn:se:uu:diva-517598 "Thesis work at DIVA"). 
+2023, [Link](http://urn.kb.se/resolve?urn=urn:nbn:se:uu:diva-517598 "Master thesis work at DIVA"). 
 Accessed 1 January 2024.

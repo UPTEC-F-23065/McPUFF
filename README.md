@@ -67,7 +67,7 @@ McPUFF                                    # Can be named anything.
 
 
 A TMC simulation has two sources of uncertainties, one statistical and one systematical. The systematical uncertainty is a measure of the model response to uncertainties in the input data, which is the desired information. In order to reduce the statistical uncertainty, a large number (potentially thousands) of simulations are performed and hence the McPUFF program performs parallel, multi-threaded, simulations in loops until the desired number of simulations are performed. The user provides the information about the simulated fission reaction at the outset and the rest of the simulation is automated.
-The time required for a McPUFF simulation depends on which GEF and TALYS options the user has chosen in the input files, as well as on the computer system that is being used. For reference, one complete McPUFF loop in a separate thread with GEF and TALYS coupled and typical input options requires about 5 core hours on a system with a "Intel(R) Core(TM) i7" CPU @ 2.30GHz. The figure below shows a schematic of the McPUFF simulations.
+The time required for a McPUFF simulation depends on which GEF and TALYS options the user has chosen in the input files, as well as on the computer system that is being used. For reference, one complete McPUFF loop in a separate thread with GEF and TALYS coupled and typical input options requires about 2 core hours on a system with a "Intel(R) Core(TM) i7" CPU @ 2.30GHz. The figure below shows a schematic of the McPUFF simulations.
 
 <img src=FlowChartMcPUFF.png width="464" height="537" />
 

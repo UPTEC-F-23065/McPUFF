@@ -80,9 +80,24 @@ In order to keep the results from potentially thousands of simulations separated
 ## Features
 
 
-The TMC method requires a large number of simulations to be performed in order to reduce the statistical error and in order to decrease the computation time, McPUFF performs multi-thread calculations in parallel. Results are stored in an object structure and, in order to free up disc space, files and folders used for the calculation are deleted after each calculation is complete.
+The user can adjust and influence the McPUFF simulations through a number of variables. These variables are placed in connection to the functions and program parts that they influence. The list below shows the variables together with a brief explanation of their functions. More information about each variable can be found in the Python docstrings in McPUFF.
 
-Saves data for param vals etc
+<pre>
+Where in McPUFF changes are made                          What the user can change
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Reaction.print_TALYS_ff_files()                           # Set E-value in printed in ".ff"-file name. (TALYS interpolates between files with different energies in the file name).
+Modified_Parameter.__init__.                              # Set "max-min". Parameter values chosen by user for "Single_Parameters" mode. Not drawn from distribution. 
+Modified_Parameter.__init__.                              # Set "scaling_number_uniform". Width of uniform distribution for "Single_Parameters" mode. For parameters with non-zero default values.
+Modified_Parameter.create_perturbed_parameter_value()     # Set "scaling_special_case_parameters". Width of uniform distribution for "Single_Parameters" and "TMC" modes. For parameters with default value = 0.
+Modified_Parameter.create_perturbed_parameter_value()     # Set "st_dev_special_param". Standard deviation of normal distribution for parameters with default value = 0 in "Single_Parameters" and "TMC" mode.
+TMC_Mod_Param_object.__init__.                            # Set "scaling_number_uniform". Width of uniform distribution for parameters with non-zero default values in "TMC" mode.
+Reaction.__init__.                                        # Set "number_of_workers". How many CPU's to use in "Single_Parameters" mode. How many GEF parameters being simulated simultaneously.
+Reaction.perturbed_calculations_single_parameter()        # Set "simultaneous_threads_per_param". Division of available CPU's between GEF parameters being simulated simultaneously.
+Reaction.__init__.                                        # Set "max_multithreads_TMC". How many CPU's to use in "TMC" mode.
+Reaction.delete_GEF_result_folder()                       # Turn off deletion of GEF runtime data for data analysis. Called in Reaction.read_and_clear_GEF_results().  Be warned, data can be large (GB).
+Reaction.delete_TALYS_result_files()                      # Turn off deletion of TALYS runtime data for data analysis. Called in Reaction.read_and_clear_TALYS_results(). Be warned, data can be large (GB). 
+Reaction.delete_TALYS_ff_files()                          # Turn off deletion of ".ff" files in GEF library during runtime. Be warned that the number of files equals twice the number of "TMC" simulations.
+</pre>
 
 ## Examples
 

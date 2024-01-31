@@ -84,20 +84,52 @@ In order to keep the results from potentially thousands of simulations separated
 The user can adjust and influence the McPUFF simulations through a number of variables. These variables are placed in connection to the functions and program parts that they influence. The list below shows the variables together with a brief explanation of their functions. More information about each variable can be found in the Python docstrings in McPUFF.
 
 <pre>
-Where in McPUFF changes are made                          What the user can change
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Reaction.print_TALYS_ff_files()                           # Set E-value in printed in ".ff"-file name. (TALYS interpolates between files with different energies in the file name).
-Modified_Parameter.__init__.                              # Set "max-min". Parameter values chosen by user for "Single_Parameters" mode. Not drawn from distribution. 
-Modified_Parameter.__init__.                              # Set "scaling_number_uniform". Width of uniform distribution for "Single_Parameters" mode. For parameters with non-zero default values.
-Modified_Parameter.create_perturbed_parameter_value()     # Set "scaling_special_case_parameters". Width of uniform distribution for "Single_Parameters" and "TMC" modes. For parameters with default value = 0.
-Modified_Parameter.create_perturbed_parameter_value()     # Set "st_dev_special_param". Standard deviation of normal distribution for parameters with default value = 0 in "Single_Parameters" and "TMC" mode.
-TMC_Mod_Param_object.__init__.                            # Set "scaling_number_uniform". Width of uniform distribution for parameters with non-zero default values in "TMC" mode.
-Reaction.__init__.                                        # Set "number_of_workers". How many CPU's to use in "Single_Parameters" mode. How many GEF parameters being simulated simultaneously.
-Reaction.perturbed_calculations_single_parameter()        # Set "simultaneous_threads_per_param". Division of available CPU's between GEF parameters being simulated simultaneously.
-Reaction.__init__.                                        # Set "max_multithreads_TMC". How many CPU's to use in "TMC" mode.
-Reaction.delete_GEF_result_folder()                       # Turn off deletion of GEF runtime data for data analysis. Called in Reaction.read_and_clear_GEF_results().  Be warned, data can be large (GB).
-Reaction.delete_TALYS_result_files()                      # Turn off deletion of TALYS runtime data for data analysis. Called in Reaction.read_and_clear_TALYS_results(). Be warned, data can be large (GB). 
-Reaction.delete_TALYS_ff_files()                          # Turn off deletion of ".ff" files in GEF library during runtime. Be warned that the number of files equals twice the number of "TMC" simulations.
+LIMITS AND STANDARD DEVIATION OF RANDOM NUMBER DISTRIBUTIONS:
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Variables for "Single_Parameters" mode:                               Where to change                                                        What the variable does
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Uniform distribution:   "scaling_number_uniform"          in "Modified_Parameter.__init__".                           # Sets width of uniform distribution for parameters with non-zero default values.
+                        "scaling_special_case_parameters" in "Modified_Parameter.create_perturbed_parameter_value()"  # Sets width of uniform distribution for parameters with default value = 0.
+                        "max-min"                         in "Modified_Parameter.__init__"                            # Scaling of parameter values chosen by user. Not drawn from distribution.
+Normal distribution:    "st_dev_special_param"            in "Modified_Parameter.create_perturbed_parameter_value()"  # Standard deviation of normal distribution for parameters with default value = 0.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Variables for "TMC" mode:                                             Where to change                                                        What the variable does
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Uniform distribution:   "scaling_number_uniform"          in "TMC_Mod_Param_object.__init__".                         # Sets width of uniform distribution for parameters with non-zero default values.
+                        "scaling_special_case_parameters" in "Modified_Parameter.create_perturbed_parameter_value()"  # Sets width of uniform distribution for parameters with default value = 0.
+Normal distribution:    "st_dev_special_param"            in "Modified_Parameter.create_perturbed_parameter_value()"  # Standard deviation of normal distribution for parameters with default value = 0.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+NUMBER OF CPU'S USED FOR SIMULATIONS:      (Program gets slow if all parameters used for simulations. Recommend some are left to let system multi-process the main thread. See docstring information).
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Variables for "Single_Parameters" mode:                      Where to change                                                       What the variable does
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+"number_of_workers"                             in "Reaction.__init__".                                    # Determines how many GEF parameters being simulated simultaneously by limiting numbers of CPU's.
+"simultaneous_threads_per_param"                in "Reaction.perturbed_calculations_single_parameter()"    # How remaining CPU's are divided between simultaneous simulations for individual GEF parameters.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Variables for "TMC" mode:                                    Where to change                                                       What the variable does
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+"max_multithreads_TMC"                          in "Reaction.__init__".                                    # How many CPU's to use for simultaneous simulations.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+TURN OF DELETION OF GEF AND TALYS RUN TIME DATA:                        (Used for analysis of GEF and TALYS output).
+#### Be warned, output is large (GB) and the number of ".ff" files is twice the number of perturbed simulations. ####
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Variable:                                                             Where to change                                                        What the variable does
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+"Reaction.delete_GEF_result_folder()"           in "Reaction.read_and_clear_GEF_results()"                # Turn off deletion of GEF runtime data for data analysis by commenting out the row.
+"Reaction.delete_TALYS_result_files()"          in "Reaction.read_and_clear_TALYS_results()"              # Turn off deletion of TALYS runtime data for data analysis by commenting out the row.
+"Reaction.delete_TALYS_ff_files()"              in "Reaction.read_and_clear_TALYS_results()"              # Turn off deletion of ".ff" files in GEF library during runtime by commenting out the row.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ENERGY VALUE IN PRINTED ".FF" FILE NAME IN TALYS LIBRARY OF GEF FISSION FRAGMENT YIELDS:
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Variable:                                                             Where to change                                                        What the variable does
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+E-value in file name.                                     in "Reaction.print_TALYS_ff_files()".                       # TALYS interpolates between files with different energies in the file name.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 </pre>
 
 ## Examples

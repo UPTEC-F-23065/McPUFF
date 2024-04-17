@@ -101,7 +101,7 @@ Normal distribution:    "st_dev_special_param"            in "Modified_Parameter
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-NUMBER OF CPU'S USED FOR SIMULATIONS:      (Program gets slow if all parameters used for simulations. Recommend some are left to let system multi-process the main thread. See docstring information).
+NUMBER OF CPU'S USED FOR SIMULATIONS:      (Program gets slow if all processors are used for simulations. Recommend some are left to let system multi-process the main thread. See docstring information).
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Variables for "Single_Parameters" mode:                      Where to change                                                       What the variable does
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
